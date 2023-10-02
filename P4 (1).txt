@@ -1,0 +1,36 @@
+//---------------------------- Pertemuan 4 -------------------------------------
+//-Materi Asynchronous-
+void main() {
+  final myFuture = Future((){          //uncomplated
+    print('Creating The Future');
+    return 12;
+  }).then((value){                    //completed with data
+    print(value);
+  }).catchError((error){              //completed with error
+    print('error $error');
+  });
+  
+  print('main() done');
+  
+  getOrder().then((value){            //completed with data
+    print('You ordered : $value');
+  }).catchError((error){              //completed with error
+    print('error $error');
+  }).whenComplete((){                 //when completed
+    print('Thank You');
+  });
+  
+  print('Getting Your Order....');
+}
+
+Future<String>getOrder(){
+  return Future.delayed(Duration(seconds: 3), (){
+    var isStockAvailable = true; //kalau false error
+    if(isStockAvailable){
+      return 'Coffee Boba';
+    }
+    else{
+      throw 'Out Of Stock';
+    }
+  });
+}

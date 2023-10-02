@@ -1,0 +1,99 @@
+void main() 
+{
+  //------------------------------pertemuan 1----------------------------------
+  print("-------------------------Pertemuan 1----------------------------------");
+  print ("Shela");
+  
+  //menyimpan teks dalam variabel string
+  String pesan = "Apa kabar?", 
+         nama = "Shela"; //dengan tipe data
+  
+  //mencetak teks dari variabel ke konsul
+  print(pesan);
+  
+  // $ menandakan bahwa ia variabel
+  var bahasa = "Dart"; //tanpa tipe data
+  print("Hallo $nama");
+  print("Hallo $nama. Welcome to $bahasa"); //String interpolation
+  print("Hallo " + nama + ". Welcome to " + bahasa); //concate
+  
+  //Mencetak Dua Teks dalam Variabel 
+  String teks1 = "Selamat";
+  String teks2 = "Pagi";
+  String teks3 = teks1 + " " + teks2;
+  print(teks3);
+  
+  //------------------------------pertemuan 2-----------------------------------
+  print("-------------------------Pertemuan 2----------------------------------");
+  String name = "Shela";
+  int usia = 18;
+  
+  print("Hallo, nama saya $name dan usia saya $usia tahun");
+  print("Hallo, nama saya " + name + " dan umur saya " + usia.toString() + " tahun");
+  
+  var alamat = "Jl.Jendral Sudirman";
+  var alamat2 = 'Jl. Rajawali';
+  print(alamat.runtimeType); //untuk mendeteksi tipe data
+  print(alamat2.runtimeType); //untuk mendeteksi tipe data
+  
+  //collection
+  var numberList = [1,2,3,4]; //list
+  var stringList = ["Hello", "Universitas MDP", "Dart"];
+  print(stringList); 
+  print(numberList); 
+  
+  var dinamicList = [1, "Universitas MDP", true];
+  print(dinamicList.runtimeType); //List<dynamic>
+  print(dinamicList[1]);
+  
+  //set
+  Set<int>mySet = new Set.from([1,2,3,4,2,1]);
+  print(mySet);
+  
+  var setA = {1,2,3};
+  var setB = {1,5,7};
+  
+  //tambahkan 4 ke dalam set A
+  setA.add(4);
+  print(setA); //1,2,3,4
+  
+  //hapus 7 dari setB
+  setB.remove(7);
+  print(setB);
+  
+  //union dan intersection
+  //coba gunakan fungsi uniion dan intersection pada setA dan setB
+  //apa yang dihasilkan dari fungsi union?
+  //apa yang dihasilkan dari fungsi intersection?
+  
+  setA.union(setB);
+  setA.intersection(setB);
+  
+  print(setA.union(setB));
+  print(setA.intersection(setB));
+  
+  //contoh operator
+  int angka1 = 10;
+  int angka2 = 5;
+  
+  int hasilTambah = angka1 + angka2;
+  int hasilKali = angka1 * angka2;
+  bool hasilPerbandingan = angka1 == angka2;
+  bool hasilLogika = (angka1 > 5) && (angka2 < 10);
+  
+  print("Hasil Penjumlahan = $hasilTambah");
+  print("Hasil Perkalian = $hasilKali");
+  print("Hasil perbandingan = $hasilPerbandingan");
+  print("Hasil logika = $hasilLogika");
+  
+  //break and continue
+  var primeNumbers = [2,3,5,7,1,13,17,19];
+  var searchNumbers = 13;
+  for(int i = 0; i < primeNumbers.length; i++){
+    if(searchNumbers == primeNumbers[i]){
+      print("$searchNumbers adalah bilangan prima ke ${i+1}");
+      break;
+    }
+    print("$searchNumbers != ${primeNumbers[i]}");
+  }
+}

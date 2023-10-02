@@ -1,0 +1,26 @@
+//---------------------------- Pertemuan 4 -------------------------------------
+//-Materi Asynchronous (2)-
+void main() async {
+  print('Getting Your Order....');
+  var order = await getOrder();
+  try{
+     print('Your order : $order');     //completed with data
+  }catch(error){
+     print('error $error');            //completed with error
+  }finally{
+    print('Thank You');                //when completed (with data)
+  }
+ 
+}
+
+Future<String>getOrder(){
+  return Future.delayed(Duration(seconds: 3), (){
+    var isStockAvailable = false; //kalau false error, kalau true bener
+    if(isStockAvailable){
+      return 'Coffee Boba';
+    }
+    else{
+      throw 'Out Of Stock';
+    }
+  });
+}
